@@ -1,0 +1,64 @@
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'customer-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'firstName'); ?>
+		<?php echo $form->textField($model,'firstName',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'firstName'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'lastName'); ?>
+		<?php echo $form->textField($model,'lastName',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'lastName'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'email'); ?>
+	</div>
+<!-- DON'T DISPLAY JOIN DATE
+	<div class="row">
+		<?php echo $form->labelEx($model,'joinDate'); ?>
+		<?php echo $form->textField($model,'joinDate'); ?>
+		<?php echo $form->error($model,'joinDate'); ?>
+    </div>
+-->
+<!-- DON'T DISPLAY ACTIVE FLAG
+	<div class="row">
+		<?php echo $form->labelEx($model,'active'); ?>
+		<?php echo $form->textField($model,'active'); ?>
+		<?php echo $form->error($model,'active'); ?>
+    </div>
+-->
+
+<!-- DON'T DISPLAY TYPE ID
+	<div class="row">
+		<?php echo $form->labelEx($model,'typeId'); ?>
+		<?php echo $form->textField($model,'typeId'); ?>
+		<?php echo $form->error($model,'typeId'); ?>
+    </div>
+-->
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'password'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
